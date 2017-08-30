@@ -1,0 +1,151 @@
+<!-- Sidebar menu -->
+<div id="app">
+	<div class="ui vertical inverted sidebar menu">
+		<a class="item">Купить Bitcoin</a>
+		<a class="item">Купить Ethereum</a>
+		<a class="item">Партнерство</a>
+		<a class="item">Новости</a>
+		<a class="item">FAQ</a>
+		<a class="item">Войти / Зарегистрироваться</a>
+	</div>
+	<div class="pusher">
+
+		<script>
+		$(document)
+			.ready(function() {
+
+				// Выдвижное меню сайдбара в мобильной версии
+				$('#app .ui.sidebar').sidebar({context:$('#app')}).sidebar('attach events', '.toc.item');
+
+				// Плавная прокрутка до якоря
+				$("#toBuy").on("click", function(e) {
+					var anchor = $(this);
+					$('html, body').stop().animate({
+						scrollTop: $("#payment").offset().top
+					}, 1500);
+					e.preventDefault();
+					return false;
+				});
+			});
+		</script>
+
+		<!-- Banner -->
+		<div class="ui vertical masthead center aligned segment">
+
+			<div class="ui container">
+				<div class="ui huge secondary inverted pointing menu">
+					<a class="toc item">
+						<i class="big sidebar icon"></i>
+					</a>
+					<a class="item">Купить Bitcoin</a>
+					<a class="item">Купить Ethereum</a>
+					<a class="item">Партнерство</a>
+					<a class="item">Новости</a>
+					<a class="item">FAQ</a>
+					<div class="right item">
+						<span>Язык</span>
+					</div>
+				</div>
+			</div>
+
+			<div class="ui text container">
+				<h1 class="ui inverted header">ПОКУПАЙТЕ КРИПТОВАЛЮТУ МОМЕНТАЛЬНО</h1>
+				<h2>Indacoin — это простой способ купить биткоины, а также другие 30 крипто-валют при помощи Visa & Mastercard</h2>
+				<button id="toBuy" class="ui yellow huge button">Купить</button>
+			</div>
+
+		</div>
+
+		<!-- Blocks -->
+		<div class="ui grid container">
+			<div class="row">
+				<div class="sixteen wide mobile eight wide tablet four wide computer">
+
+					<!-- Advantages -->
+					<div id="advantages" class="ui padded segment">
+						<h2 class="ui center aligned header">Наши преимущества</h2>
+						<div class="ui stackable grid">
+							<div class="three column row">
+								<div class="column">
+									<h3 class="ui center aligned icon header"><i class="checkmark box icon"></i><span>Качественно</span></h3>
+									<p>Работаем честно, подходим с уважением к каждому клиенту</p>
+								</div>
+								<div class="column">
+									<h3 class="ui center aligned icon header"><i class="protect icon"></i><span>Безопасно</span></h3>
+									<p>Уделяем большое внимание защите информации</p>
+								</div>
+								<div class="column">
+									<h3 class="ui center aligned icon header"><i class="line chart icon"></i><span>Выгодно</span></h3>
+									<p>У нас нет комиссий, всегда в наличии резервы</p>
+								</div>
+							</div>
+
+							<div class="three column row">
+								<div class="column">
+									<h3 class="ui center aligned icon header"><i class="money icon"></i><span>Дешего</span></h3>
+									<p>Низкая комиссия на ордера. Мы используем динамическую комиссию.</p>
+								</div>
+								<div class="column">
+									<h3 class="ui center aligned icon header"><i class="credit card alternative icon"></i><span>Широкий выбор</span></h3>
+									<p>Мы часто подключаем новые системы для ввода и вывода средств</p>
+								</div>
+								<div class="column">
+									<h3 class="ui center aligned icon header"><i class="rocket icon"></i><span>Быстро</span></h3>
+									<p>Высокая скорость проведения транзакций</p>
+								</div>
+							</div>
+
+						</div>
+					</div>
+
+					<!-- Payment -->
+					<div id="payment" class="ui padded segment">
+						{{#if isExpanded}}
+							{{credit-form summ=howMany}}
+						{{else}}
+							{{purchase-form onConfirm=(action "toCreditForm")}}
+						{{/if}}
+					</div>
+
+					<!-- Footer -->
+					<div id="contacts" class="ui padded secondary segment">
+						<div class="ui stackable inverted divided equal height stackable grid">
+							<div class="four wide column">
+								<h4 class="ui header">КУПИТЬ</h4>
+								<div class="ui link list">
+									<a href="#" class="item">Bitcoin</a>
+									<a href="#" class="item">Ethereum</a>
+									<a href="#" class="item">Bitcoin Cash</a>
+									<a href="#" class="item">IOTA</a>
+								</div>
+							</div>
+							<div class="four wide column">
+								<h4 class="ui header">ИНФОРМАЦИЯ</h4>
+								<div class="ui link list">
+									<a href="#" class="item">Информация</a>
+									<a href="#" class="item">О нас</a>
+									<a href="#" class="item">FAQ</a>
+									<a href="#" class="item">Условия пользования</a>
+								</div>
+							</div>
+							<div class="four wide column">
+								<h4 class="ui header">ИНСТРУМЕНТЫ</h4>
+								<div class="ui link list">
+									<a href="#" class="item">API</a>
+									<a href="#" class="item">Партнерская программа</a>
+									<a href="#" class="item">Мобильное приложение</a>
+								</div>
+							</div>
+							<div class="four wide column">
+								<h4 class="ui header">КОНТАКТЫ</h4>
+								<p>London Suite 4b, 43 Berkeley Square, Mayfair, London, Westminster, United Kingdom, W1J 5FJ Company Number 08924450</p>
+								<p><i class="mail icon"></i><span>support@indacoin.com</span></p>
+								<p><i class="call icon"></i><span>+44 207 048 25 82</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

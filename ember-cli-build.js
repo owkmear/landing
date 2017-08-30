@@ -8,6 +8,17 @@ module.exports = function(defaults) {
     // Add options here
   });
 
+  app.import('bower_components/fonts/Roboto/RobotoRegular/RobotoRegular.ttf');
+  app.import('bower_components/fonts/Roboto/RobotoLight/RobotoLight.ttf');
+  app.import('bower_components/fonts/Roboto/RobotoMedium/RobotoMedium.ttf');
+  app.import('bower_components/fonts/Roboto/RobotoBold/RobotoBold.ttf');
+
+
+  app.import('bower_components/fonts/Roboto/Roboto.ttf');
+
+  //app.import('public/scripts/sidebar.js');
+  
+  
   // Use `app.import` to add additional libraries to the generated
   // output files.
   //

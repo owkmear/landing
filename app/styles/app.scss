@@ -1,0 +1,157 @@
+body {
+	font-family: "Helvetica Neue", Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	background: #ecf0f1;
+}
+.container-center {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+}
+.ui.button.long {
+	font-weight: 700;
+	width: 400px;
+}
+.ui.masthead.segment {
+	background: #33CC66;
+}
+.ui.secondary.inverted.pointing.menu {
+	border: none;
+}
+.ui.secondary.inverted.pointing.menu :active {
+	border: none;
+	margin: 0;
+}
+.secondary.pointing.menu .right.item :hover {
+  color: #ffffff;
+}
+.btccolor {
+  color: #FF8B1C;
+}
+.usdcolor {
+  color: #16C58C;  
+}
+.toline {
+  display: inline;
+}
+
+/****************** Banner ******************/
+.hidden.menu {
+  display: none;
+}
+.secondary.pointing.menu .toc.item {
+  display: none;
+}
+.masthead.segment {
+  min-height: 700px;
+  padding: 1em 0em;
+}
+.masthead .ui.menu .ui.button {
+  margin-left: 0.5em;
+}
+.masthead h1.ui.header {
+  margin-top: 5em;
+  margin-bottom: 0em;
+  font-size: 1.7em;
+  font-weight: normal;
+}
+.masthead h2 {
+  font-size: 0.8em;
+	font-weight: normal;
+	color: #ffffff;
+}
+.masthead .button {
+	margin-top: 5em;
+}
+
+/****************** Blocks ******************/
+#advantages {
+	margin-top: 3em;
+}
+#contacts {
+	margin-bottom: 2em;
+}
+.ui.padded.segment {
+  padding-top: 3em;
+  padding-bottom: 2em;
+}
+
+/****************** Payment ******************/
+#available {
+  font-weight: 600;
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+
+/****************** Advantages ******************/
+#advantages h2 {
+  color: #494c58;
+}
+#advantages i {
+  color: #c2c4ce;
+}
+#advantages h3 span {
+  color: #777A86;
+}
+#advantages p {
+  text-align: center;
+  color: #8a8a8a;
+}
+
+/****************** Footer ******************/
+#contacts .ui.secondary.segment {
+  background-color: #c4ccd4;
+}
+#contacts h4,
+#contacts a,
+#contacts p {
+  font-size: 12px;
+}
+#contacts p {
+  color: #000000;
+}
+
+@media only screen and (max-width: 768px) {
+
+  #purchase .button {
+    margin-top: 1em;
+  }
+  .ui.button.long {
+    font-family: Roboto, "Helvetica Neue", Arial, Helvetica, sans-serif;
+    font-weight: 700;
+    width: 274px;
+  }
+  .secondary.pointing.menu .item,
+  .secondary.pointing.menu .menu {
+    display: none;
+  }
+  .secondary.pointing.menu .toc.item {
+    display: block;
+  }
+  .masthead.segment {
+    min-height: 350px;
+  }
+  .masthead h1.ui.header {
+    font-size: 2em;
+    margin-top: 1.5em;
+  }
+  .masthead h2 {
+    margin-top: 0.5em;
+    font-size: 1.5em;
+  }
+  .ui.fixed.menu {
+    display: none !important;
+	}
+	.masthead h1.ui.header {
+		font-size: 1em;
+	}
+	.masthead h2 {
+		font-size: 0.8em;
+		font-weight: normal;
+		color: #ffffff;
+	}
+	.masthead .button {
+		margin-top: 2em;
+	}
+}

@@ -1,0 +1,147 @@
+<div class="ui small steps">
+  <div class=" step">
+    <i class="law icon"></i>
+    <div class="content">
+      <div class="title">Выбор</div>
+      <div class="description">Укажите количество</div>
+    </div>
+  </div>
+  <div class="active step">
+    <i class="payment icon"></i>
+    <div class="content">
+      <div class="title">Оплата</div>
+      <div class="description">Ввод платежной информации</div>
+    </div>
+  </div>
+  <div class="disabled step">
+    <i class="info icon"></i>
+    <div class="content">
+      <div class="title">Подтверждение</div>
+    </div>
+  </div>
+</div>
+
+<p id="available">Цена: <span class="usdcolor">3930.42 USD</span> / <span class="btccolor">BTC</span>, доступно: <span class="btccolor">52.210078 BTC</span>, <span class="usdcolor">6800.41 USD</span></p>
+
+<form id="credit" class="ui form">
+  <div class="ui sixteen wide column">
+    <div class="inline fields">
+
+      <label>Вы отдаете</label>
+      <div class="eight wide field">
+        <div class="ui right labeled input">
+          <input type="text" id="usdConfirm" name="usd" placeholder="0" value="{{summ}}">
+          <div class="ui label">USD</div>
+        </div>
+      </div>
+    
+      <label>Вы получаете</label>
+      <div class="eight wide field">
+        <div class="ui right labeled input">
+          <input type="text" id="btcConfirm" name="btc" placeholder="0">
+          <div class="ui label">BTC</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="two fields">
+    <div class="field">
+      <label>Email</label>
+      <input type="text" name="email" id="email" placeholder="example@gmail.com">
+    </div>
+
+    <div class="field">
+      <label>ФИО</label>
+      <input type="text" name="name" id="name" placeholder="Иванов Иван Иванович">
+    </div>
+  </div>
+
+  <div class="two fields">
+    <div class="field">
+      <label>Номер телефона</label>
+      <input type="text" name="phone" id="phone" placeholder="+7 12345678">
+    </div>
+    
+    <div class="field">
+      <label>Дата рождения</label>
+      <input type="text" name="birthday" placeholder="21.07.1995">
+    </div>
+  </div>
+
+  <div class="two fields">
+    <div class="field">
+      <label>Адрес Bitcoin кошелька</label>
+      <input type="text" name="wallet" placeholder="1GwV7fPX97hmavc6iNrUZUogmjpLPrPFoE">
+    </div>
+  </div>
+
+  <div class="inline field">
+    <div class="ui checkbox" id="termsCheckbox">
+      <input type="checkbox" name="terms" class="hidden">
+      <label>Я согласен с указанной ценой и <a href="#">Правилами</a></label>
+    </div>
+  </div>
+
+  <h4 class="ui dividing header">Платежная информация</h4>
+  <div class="field">
+    <label>Тип карты</label>
+    <div class="ui selection dropdown" id="cardType">
+      <input type="hidden" name="card">
+      <div class="default text">Тип карты</div>
+      <i class="dropdown icon"></i>
+      <div class="menu">
+        <div class="item" data-value="visa">
+          <i class="visa icon"></i>
+          Visa
+        </div>
+        <div class="item" data-value="amex">
+          <i class="amex icon"></i>
+          American Express
+        </div>
+        <div class="item" data-value="discover">
+          <i class="discover icon"></i>
+          Discover
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="fields">
+    <div class="seven wide field">
+      <label>Номер карты</label>
+      <input type="text" name="number" maxlength="16" placeholder="4565340519181845">
+    </div>
+
+    <div class="three wide field">
+      <label>CV</label>
+      <input type="password" name="cv" maxlength="3" placeholder="123">
+    </div>
+
+    <div class="six wide field">
+      <label>Срок действия</label>
+      <div class="two fields">
+      <div class="field">
+        <input type="text" name="month" maxlength="2" placeholder="04">
+      </div>
+
+      <div class="field">
+        <input type="text" name="year" maxlength="2" placeholder="19">
+      </div>
+      </div>
+    </div>
+  </div>
+  
+  <div class="ui error message">
+    <div class="header">Некорректно заполнены данные</div>
+    <ul class="list">
+      <li>Введите Ваше ФИО</li>
+      <li>Введите Ваш номер телефона</li>
+    </ul>
+  </div>
+
+  <div class="container-center">
+    <div class="ui fluid teal submit button long" onclick={{action 'submitForm'}}><i class="in cart icon"></i>Купить</div>
+  </div>
+</form>
