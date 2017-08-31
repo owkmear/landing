@@ -3,16 +3,13 @@ import Ember from 'ember';
 export default Ember.Component.extend({
   didInsertElement() {
 
+    let me = this;
+
     // Initialize semantic-ui components
-    this
-    .$('#termsCheckbox')
-    .checkbox();
+    me.$('#termsCheckbox').checkbox();
+    me.$('#cardType').dropdown();
 
-    this
-    .$('#cardType')
-    .dropdown();
-
-    $('#credit')
+    me.$('#credit')
     .form({
       fields: {
         usd: {
@@ -135,19 +132,19 @@ export default Ember.Component.extend({
       }
     });
 
-    let usd = this.$('#usdConfirm');
-    let btc = this.$('#btcConfirm');
+    let usd = me.$('#usdConfirm');
+    let btc = me.$('#btcConfirm');
 
     usd.on("blur", function() {
-        verifyNumber($(this), $(this).val());
+        verifyNumber(me.$(this), me.$(this).val());
     });
     
-    usd.on("keypress", function(e) {
-        verifyNumber($(this), $(this).val());
+    usd.on("keypress", function() {
+        verifyNumber(me.$(this), me.$(this).val());
     });
     
     usd.on("keyup", function() {
-        verifyNumber($(this), $(this).val());
+        verifyNumber(me.$(this), me.$(this).val());
         btc.val(
             (usd.val() / 3930.42)
             .toFixed(6)
@@ -155,19 +152,19 @@ export default Ember.Component.extend({
     });
     
     usd.on("change", function() {
-        verifyNumber($(this), $(this).val());
+        verifyNumber(me.$(this), me.$(this).val());
     });
 
     btc.on("blur", function() {
-        verifyNumber($(this), $(this).val());
+        verifyNumber(me.$(this), me.$(this).val());
     });
     
-    btc.on("keypress", function(e) {
-        verifyNumber($(this), $(this).val());
+    btc.on("keypress", function() {
+        verifyNumber(me.$(this), me.$(this).val());
     });
     
     btc.on("keyup", function() {
-        verifyNumber($(this), $(this).val());
+        verifyNumber(me.$(this), me.$(this).val());
         usd.val(
             (btc.val() * 3930.42)
             .toFixed(3)
@@ -175,7 +172,7 @@ export default Ember.Component.extend({
     });
     
     btc.on("change", function() {
-        verifyNumber($(this), $(this).val());
+        verifyNumber(me.$(this), me.$(this).val());
     });
 
     function verifyNumber(context, ch)
@@ -201,8 +198,7 @@ export default Ember.Component.extend({
   actions: {
   
       submitForm() {
-          let email = this.$('#email').val();
-          let phone = this.$('#phone').val();
+
       }
   }
 

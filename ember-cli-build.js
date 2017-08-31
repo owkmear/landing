@@ -7,8 +7,6 @@ module.exports = function(defaults) {
   let app = new EmberApp(defaults, {
     // Add options here
   });
-
-  //app.import('public/scripts/sidebar.js');
   
   
   // Use `app.import` to add additional libraries to the generated

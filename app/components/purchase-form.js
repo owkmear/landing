@@ -3,58 +3,59 @@ import Ember from 'ember';
 export default Ember.Component.extend({
     didInsertElement() {
 
-        let usd = this.$('#usdInput');
-        let btc = this.$('#btcInput');
-        let sendButton = this.$('#sendButton');
+        let me = this;
+        let usd = me.$('#usdInput');
+        let btc = me.$('#btcInput');
+        let sendButton = me.$('#sendButton');
 
         usd.on("blur", function() {
-            verifyNumber($(this), $(this).val());
+            verifyNumber(me.$(this), me.$(this).val());
         });
         
-        usd.on("keypress", function(e) {
-            verifyNumber($(this), $(this).val());
+        usd.on("keypress", function() {
+            verifyNumber(me.$(this), me.$(this).val());
         });
         
         usd.on("keyup", function() {
-            verifyNumber($(this), $(this).val());
+            verifyNumber(me.$(this), me.$(this).val());
             btc.val(
                 (usd.val() / 3930.42)
                 .toFixed(6)
             );
 
-            if (regCheck($(this).val()))
+            if (regCheck(me.$(this).val()))
                 sendButton.removeClass('disabled');
             else
                 sendButton.addClass('disabled');
         });
         
         usd.on("change", function() {
-            verifyNumber($(this), $(this).val());
+            verifyNumber(me.$(this), me.$(this).val());
         });
 
         btc.on("blur", function() {
-            verifyNumber($(this), $(this).val());
+            verifyNumber(me.$(this), me.$(this).val());
         });
         
-        btc.on("keypress", function(e) {
-            verifyNumber($(this), $(this).val());
+        btc.on("keypress", function() {
+            verifyNumber(me.$(this), me.$(this).val());
         });
         
         btc.on("keyup", function() {
-            verifyNumber($(this), $(this).val());
+            verifyNumber(me.$(this), me.$(this).val());
             usd.val(
                 (btc.val() * 3930.42)
                 .toFixed(3)
             );
 
-            if (regBtcCheck($(this).val()))
+            if (regBtcCheck(me.$(this).val()))
                 sendButton.removeClass('disabled');
             else
                 sendButton.addClass('disabled');
         });
         
         btc.on("change", function() {
-            verifyNumber($(this), $(this).val());
+            verifyNumber(me.$(this), me.$(this).val());
         });
         
         function verifyNumber(context, ch)
@@ -72,13 +73,6 @@ export default Ember.Component.extend({
             if (param == 0)
                 return true;
             return (param / param) ? true : false;
-        }
-
-        function sizeCheck(param) {
-            if (param > 100000 || param < 0)
-                return false;
-            else
-                return true;
         }
 
         function regCheck(param) {
